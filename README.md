@@ -2,7 +2,7 @@
 React.JS Starter Kit with Webpack config, and examples with both ES6 and React Way
 
 ##How to use?
-- Download or Clone this repo `git clone https://github.com/tijanmdr/beginner-react.git`
+- Download or Clone this repo `git clone https://github.com/tijanmdr/Basics-React.git`
 - Inside the folder, open terminal and type `npm install`
 - After installing all the dependencies, serve `npm run build` from root folder of project
 
