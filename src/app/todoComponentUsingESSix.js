@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './css/bootstrap.min.css';
 
 var myCheese = {name:'Tijan', id:9, price: 350}
 
@@ -13,7 +14,7 @@ class HelloComponent extends React.Component {
     }
     render() {
         return(
-            <div>
+            <div className='col-md-6'>
                 <h1>Using New</h1>
                 <h2>{this.props.mssg}</h2>
                 <p><b>Name: </b>{this.props.cheese.name}</p>

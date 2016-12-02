@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './css/bootstrap.min.css';
 
 // Create Component using React Method
 var TodoComponent = React.createClass ({
@@ -17,7 +18,7 @@ var TodoComponent = React.createClass ({
             })
         }.bind(this), 5000);
         return(
-            <div>
+            <div className="col-md-6">
                 <h1 onClick={this.clicked.bind(this, "hello")}>Hello, using React</h1>
                 <p>{this.state.age}</p>
                 <p>{this.props.mssg}</p>
