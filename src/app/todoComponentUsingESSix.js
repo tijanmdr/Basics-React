@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/bootstrap.min.css';
 
-var myCheese = {name:'Tijan', id:9, price: 350}
+var myCheese = {name:'Tijan', id:9, price: 350};
 
 // Create Component using ES6 method
 class HelloComponent extends React.Component {
@@ -20,22 +20,23 @@ class HelloComponent extends React.Component {
                 <p><b>Name: </b>{this.props.cheese.name}</p>
                 <p><b>ID: </b>{this.props.cheese.id}</p>
                 <p><b>Price: </b>Rs. {this.props.cheese.price}</p>
-                <ListComponent todo={this.state.todos} />
+                <ul className='Hello'>
+                    {this.state.todos.map((todo, index) => (
+                        <li key={index}>{todo}<br /><span onClick={this.deleteItem.bind(this,todo)}>Delete</span></li>
+                    ))}
+                </ul>
             </div>
         );
+    };
+
+    deleteItem (data) {
+        this.state.todos.splice(this.state.todos.indexOf(data), 1);
+        this.setState({todos: this.state.todos});
     }
 }
 
-class ListComponent extends React.Component {
-    render() {
-        return(
-            <ul className='Hello'>
-            {this.props.todo.map((todo, index) => (
-                <li key={index}>{todo}</li>
-            ))}
-            </ul>
-        );
-    }
+class ApiCheck extends React.Component {
+
 }
 
 ReactDOM.render(<HelloComponent mssg="Hello again" cheese={myCheese} />, document.getElementById('todo-component'));

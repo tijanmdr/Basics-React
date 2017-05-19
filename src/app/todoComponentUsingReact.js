@@ -11,12 +11,12 @@ var TodoComponent = React.createClass ({
         }
     },
     render: function() {
-        var ager = setTimeout(function() {
-
+        setTimeout(function() {
             this.setState({
                 age: 35
             })
-        }.bind(this), 5000);
+        }.bind(this), 500);
+
         return(
             <div className="col-md-6">
                 <h1 onClick={this.clicked.bind(this, "hello")}>Hello, using React</h1>
@@ -25,7 +25,7 @@ var TodoComponent = React.createClass ({
                 <ul>
                     {this.state.todos.map((todo, index) => (
                         <div key={index}>
-                            <li>{todo}</li>
+                            <li onClick={this.clicked.bind(this, todo)}>{todo}</li>
                             <span onClick={this.deleted.bind(this, index)}>Delete</span>
                         </div>
                     ))}
